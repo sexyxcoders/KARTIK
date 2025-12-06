@@ -9,12 +9,11 @@ from AloneMusic.utils.database import get_assistant
 welcome = 20
 close = 30
 
-
 @app.on_message(filters.video_chat_started, group=welcome)
 @app.on_message(filters.video_chat_ended, group=close)
 async def welcome(_, message: Message):
-    # Force leave VC when started or ended (compatible with your version)
-    await Alone.leave_call(message.chat.id)
+    # Force stop VC stream (compatible with current AloneMusic)
+    await Alone.stop_stream_force(message.chat.id)
 
 
 @app.on_message(filters.left_chat_member, group=69)
