@@ -1,10 +1,3 @@
-#
-# Copyright (C) 2021-2022 by TheAloneteam@Github, < https://github.com/TheAloneTeam >.
-#
-# This file is part of < https://github.com/TheAloneTeam/AloneMusic > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TheAloneTeam/AloneMusic/blob/master/LICENSE >
-#
 # All rights reserved.
 
 from pyrogram import filters
@@ -20,7 +13,8 @@ close = 30
 @app.on_message(filters.video_chat_started, group=welcome)
 @app.on_message(filters.video_chat_ended, group=close)
 async def welcome(_, message: Message):
-    await Alone.stop_stream_force(message.chat.id)
+    # Force leave VC when started or ended (compatible with your version)
+    await Alone.leave_call(message.chat.id)
 
 
 @app.on_message(filters.left_chat_member, group=69)
