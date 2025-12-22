@@ -24,7 +24,7 @@ import random
 import logging
 from urllib.parse import quote_plus
 
-API_URL = "https://shrutibots.site"
+API_URL = "http://46.250.243.52:1470"
 DOWNLOAD_FOLDER = "downloads"
 CHUNK_SIZE = 8192  # don't chnge this value
 RETRIES = 6  # you may increase if error arises for some yt videos
