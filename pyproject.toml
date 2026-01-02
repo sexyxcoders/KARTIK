@@ -49,7 +49,7 @@ dependencies = [
     "motor>=3.4.0",
     "psutil",
     "heroku3",
-    "Pillow==9.5.0",
+    "Pillow==12.1.0",
     "speedtest-cli",
     "yt-dlp",
     "youtube-search",
